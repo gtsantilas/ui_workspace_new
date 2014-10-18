@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui"
+	xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+<h:head>
+	<title>BootsFaces: next-gen JSF Framework</title>
+	<meta name="author" content="Riccardo Massera"></meta>
+	<h:outputStylesheet name="ps-pagolinea.css" library="css" />
+</h:head>
+<h:body>
+	<b:navBar brand="Brand" brandHref="#" inverse="true">
+		<b:navbarLinks>
+			<b:navLink value="Home" href="#"></b:navLink>
+			<b:navLink value="Link" href="#"></b:navLink>
+			<b:navLink value="Link" href="#"></b:navLink>
+			<b:dropMenu value="Dropdown">
+				<b:navLink value="Action" href="#"></b:navLink>
+				<b:navLink value="Another action" href="#"></b:navLink>
+				<b:navLink value="Something else here" href="#"></b:navLink>
+				<b:navLink></b:navLink>
+				<b:navLink header="Nav header"></b:navLink>
+				<b:navLink value="Separated link" href="#"></b:navLink>
+				<b:navLink value="One more separated link" href="#"></b:navLink>
+			</b:dropMenu>
+		</b:navbarLinks>
+	</b:navBar>
+	<b:row>
+		<b:column span="2">
+			<h:form>
+				<p:growl id="messages" showDetail="false" />
+				<p:menu style="padding-left: 10px">
+					<p:submenu label="Ajax Menuitems">
+						<p:menuitem value="Save" actionListener="#{menuView.save}"
+							update="messages" icon="ui-icon-disk" />
+						<p:menuitem value="Update" actionListener="#{menuView.update}"
+							update="messages" icon="ui-icon-arrowrefresh-1-w" />
+					</p:submenu>
+					<p:submenu label="Non-Ajax Menuitem">
+						<p:menuitem value="Delete" actionListener="#{menuView.delete}"
+							update="messages" ajax="false" icon="ui-icon-close" />
+					</p:submenu>
+					<p:submenu label="Navigations">
+						<p:menuitem value="External" url="http://www.primefaces.org"
+							icon="ui-icon-home" />
+					</p:submenu>
+				</p:menu>
+			</h:form>
+
+		</b:column>
+		<b:column span="10">
+								<b:panel rendered="true" look="primary" title="Panel 1"
+				footer="fotter">
+				<b:jumbotron>
+					<h1>Hello, world!</h1>
+					<p>This is a simple hero unit, a simple jumbotron-style
+						component for calling extra attention to featured content or
+						information.</p>
+					<p>
+						<h:form>
+							<p:commandButton value="Learn more"
+								actionListener="#{welcomeView.execAjax()}"
+								styleClass="btn btn-primary btn-lg"></p:commandButton>
+						</h:form>
+					</p>
+				</b:jumbotron>
+				<h:panelGrid columns="4" cellpadding="10">
+					<b:button outcome="testButton" value="Bookmark" icon="bookmark">
+						<f:param name="testId" value="11" />
+					</b:button>
+
+					<b:button outcome="testButton" value="With Icon" icon="envelope">
+						<f:param name="testId" value="22" />
+					</b:button>
+
+					<b:button outcome="testButton" value="" icon="envelope">
+						<f:param name="testId" value="33" />
+					</b:button>
+
+					<b:button outcome="testButton" value="Bookmark" icon="envelope"
+						disabled="true">
+						<f:param name="testId" value="44" />
+					</b:button>
+				</h:panelGrid>
+			</b:panel>
+		
+		</b:column>
+
+	</b:row>
+</h:body>
+</html>
