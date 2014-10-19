@@ -35,26 +35,29 @@
 
 			</div>
 			<div class="col-md-10">
-				<p:panel id="basic" header="Basic" footer="Movie Details"
-					styleClass="panel panel-primary">
-					<h:panelGrid columns="2" cellpadding="10">
-						<div class="jumbotron">
-							<h1>Jumbotron</h1>
-							<p>This is a simple hero unit, a simple jumbotron-style
-								component for calling extra attention to featured content or
-								information.</p>
-							<p>
-								<a class="btn btn-primary btn-lg">Learn more</a>
-							</p>
-						</div>
-					</h:panelGrid>
-				</p:panel>
 				<div class="panel panel-primary">
 					<div class="panel-heading">
 						<h3 class="panel-title">Panel primary</h3>
 					</div>
 					<div class="panel-body">
 						<h:form>
+							<p:dataTable var="car" value="#{dtBasicView.cars}" styleClass="table table-striped table-hover ">
+								<p:column headerText="Id">
+									<h:outputText value="#{car.id}" />
+								</p:column>
+
+								<p:column headerText="Year">
+									<h:outputText value="#{car.year}" />
+								</p:column>
+
+								<p:column headerText="Brand">
+									<h:outputText value="#{car.brand}" />
+								</p:column>
+
+								<p:column headerText="Color">
+									<h:outputText value="#{car.color}" />
+								</p:column>
+							</p:dataTable>
 							<p:commandButton value="Learn more"
 								actionListener="#{welcomeView.execAjax()}"
 								styleClass="btn btn-primary btn-lg"></p:commandButton>
