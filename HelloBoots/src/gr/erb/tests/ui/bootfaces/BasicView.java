@@ -6,10 +6,10 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.ViewScoped;
+import javax.faces.bean.SessionScoped;
 
 @ManagedBean(name="dtBasicView")
-@ViewScoped
+@SessionScoped
 public class BasicView implements Serializable {
      
     /**
@@ -33,5 +33,9 @@ public class BasicView implements Serializable {
  
     public void setService(CarService service) {
         this.service = service;
+    }
+    public void refreshMe() {
+    	cars = service.createCars(10);
+    	
     }
 }
