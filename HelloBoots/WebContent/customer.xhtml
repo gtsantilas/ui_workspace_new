@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui" xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+	<ui:param name="pageTitle" value="Home" />
+	<ui:param name="pageSubtitle" value="Welcome" />
+		<div class="row">
+			<div class="col-md-2">
+				<h:form styleClass="form-horizontal">
+					<p:growl id="messages" showDetail="false" />
+					<p:menu styleClass="nav nav-pills nav-stacked">
+						<p:submenu label="Ajax Menuitems">
+							<p:menuitem value="Save"
+								actionListener="#{welcomeView.execMenuAction()}" 
+								icon="ui-icon-disk" />
+							<p:menuitem value="Update"
+								actionListener="#{welcomeView.execMenuAction()}"
+								update="messages" icon="ui-icon-arrowrefresh-1-w" />
+						</p:submenu>
+						<p:submenu label="Non-Ajax Menuitem">
+							<p:menuitem value="Refresh"
+								actionListener="#{welcomeView.execMenuAction()}" ajax="true"
+								icon="ui-icon-close" />
+						</p:submenu>
+						<p:submenu label="Navigations">
+							<p:menuitem value="External" url="http://www.primefaces.org"
+								icon="ui-icon-home" />
+						</p:submenu>
+					</p:menu>
+				</h:form>
+			</div>
+			<ui:include src="searchCustomers.xhtml" />
+		</div>
+
+
+</ui:composition>

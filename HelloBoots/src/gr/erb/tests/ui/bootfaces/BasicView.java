@@ -36,6 +36,6 @@ public class BasicView implements Serializable {
     }
     public void refreshMe() {
     	cars = service.createCars(10);
-    	
+    	System.out.println("refreshme is called...");
     }
 }

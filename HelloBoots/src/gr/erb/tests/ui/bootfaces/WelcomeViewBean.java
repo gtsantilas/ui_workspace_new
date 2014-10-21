@@ -12,6 +12,7 @@ public class WelcomeViewBean {
 	private IMyEntryPoint myEntryPoint;
 	
 	private String firstName;
+	private String mainContentPage;
 	
 	
 	public String getFirstName() {
@@ -24,7 +25,21 @@ public class WelcomeViewBean {
 	}
 
 
+	public String getMainContentPage() {
+		return mainContentPage;
+	}
+
+
+	public void setMainContentPage(String mainContentPage) {
+		this.mainContentPage = mainContentPage;
+	}
+
+	public void execMenuAction() {
+		this.mainContentPage = "cars.xhtml";
+	}
+
 	public void execAjax() {
 		this.firstName = myEntryPoint.echo(firstName);
 	}
+	
 }

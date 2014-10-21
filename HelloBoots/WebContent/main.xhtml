@@ -11,12 +11,10 @@
 <h:head>
 	<title>#{msg['application.title']}</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<h:outputStylesheet library="united" name="css/bootstrap.css" />
+	<h:outputStylesheet library="cerulean" name="css/bootstrap.css" />
 </h:head>
 
 <h:body>
-
-
 		<!-- Static navbar -->
 		<div class="navbar navbar-inverse">
 			<div class="navbar-header">
@@ -29,8 +27,8 @@
 			</div>
 			<div class="navbar-collapse collapse navbar-inverse-collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Active</a></li>
-					<li><a href="#">Link</a></li>
+					<li><a href="customer.xhtml">Active</a></li>
+					<li><a href="accounts.xhtml">Accounts</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">Dropdown <b class="caret"></b></a>
 						<ul class="dropdown-menu">
@@ -63,9 +61,11 @@
 		</div>
 
 	<!-- /container -->
-
+	
+	<!-- 
     <ui:insert name="body">Body</ui:insert>
-
+ 	-->
+ 	<ui:include src="customer.xhtml" />
 
 	<!-- Le javascript ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
