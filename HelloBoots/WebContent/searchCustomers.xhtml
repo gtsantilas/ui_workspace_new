@@ -12,6 +12,7 @@
 			<p:panel id="basic" header="Basic" footer="Movie Details"
 				styleClass="panel panel-primary">
 				<h:panelGrid columns="2" cellpadding="10">
+					
 					<p:inputText placeholder="My text box"
 						styleClass="form-control col-lg-8" />
 				</h:panelGrid>
@@ -41,7 +42,7 @@
 				</p:dataTable>
 				<p:commandButton value="refreshMe" id="refreshMe" update="cardt"
 					actionListener="#{dtBasicView.refreshMe()}"
-					styleClass="btn btn-primary"></p:commandButton>
+					styleClass="btn btn-primary" title="refresh data tabse"></p:commandButton>
 			</h:form>
 		</div>
 	</div>
